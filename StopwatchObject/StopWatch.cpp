@@ -1,4 +1,5 @@
 #include "StopWatch.h"
+#include <iostream>
 #include <time.h>
 
 
@@ -13,20 +14,27 @@ StopWatch::StopWatch() {
 
 
 bool StopWatch::Start() {
-	beginTime = clock();
+	this->beginTime = clock();
 }
 
 
 bool StopWatch::Stop() {
-	endTime = clock();
+	this->endTime = clock();
 }
 
 
 bool StopWatch::IsTicking() {
-
+	if (this->endTime = NULL) {
+		return false;
+	}
+	else {
+		return true;
+	}
 }
 
 
 void StopWatch::DisplayTimerInfo() {
-
+	this->secondsElapsed = elapsedTime / CLOCKS_PER_SEC;
+	this->milsElapsed = elapsedTime / (CLOCKS_PER_SEC / 1000);
+	std::cout << this->secondsElapsed << "." << this->milsElapsed << " seconds have passed.";
 }
