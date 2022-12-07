@@ -5,23 +5,33 @@
 
 // CONSTRUCTOR
 StopWatch::StopWatch() {
-	clock_t beginTime = 0;
-	clock_t endTime = 0;
-	clock_t elapsedTime = 0;
-	long int secondsElapsed = 0;
-	long int milsElapsed = 0;
+	this->beginTime = 0;
+	this->endTime = 0;
+	this->elapsedTime = 0;
+	this->secondsElapsed = 0;
+	this->milsElapsed = 0;
 }
 
 
 bool StopWatch::Start() {
-	this->beginTime = clock();
-	return true;
+	if (this->IsTicking()) {
+		return false;
+	}
+	else {
+		this->beginTime = clock();
+		return true;
+	}
 }
 
 
 bool StopWatch::Stop() {
-	this->endTime = clock();
-	return true;
+	if (this->IsTicking()) {
+		this->endTime = clock();
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 
