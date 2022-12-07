@@ -46,6 +46,7 @@ bool StopWatch::IsTicking() {
 
 
 void StopWatch::DisplayTimerInfo() {
+	this->elapsedTime = this->endTime - this->beginTime;
 	this->secondsElapsed = elapsedTime / CLOCKS_PER_SEC;
 	this->milsElapsed = elapsedTime / (CLOCKS_PER_SEC / 1000);
 	std::cout << this->secondsElapsed << "." << this->milsElapsed << " seconds have passed.";
