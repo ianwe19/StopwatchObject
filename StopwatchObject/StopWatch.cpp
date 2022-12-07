@@ -5,7 +5,7 @@
 
 // CONSTRUCTOR
 StopWatch::StopWatch() {
-	clock_t beginTime = 0;		// really a 'long int'
+	clock_t beginTime = 0;
 	clock_t endTime = 0;
 	clock_t elapsedTime = 0;
 	long int secondsElapsed = 0;
