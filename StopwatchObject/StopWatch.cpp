@@ -15,11 +15,13 @@ StopWatch::StopWatch() {
 
 bool StopWatch::Start() {
 	this->beginTime = clock();
+	return true;
 }
 
 
 bool StopWatch::Stop() {
 	this->endTime = clock();
+	return true;
 }
 
 
